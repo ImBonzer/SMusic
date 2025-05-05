@@ -1,0 +1,630 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: #121212;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+/* Estilo para los íconos de navegación */
+.nav-icon {
+  font-size: 50px; /* Tamaño del ícono */
+  vertical-align: middle; /* Alinea el ícono con el texto */
+  margin-right: 8px; /* Espaciado entre el ícono y el texto */
+  color: #53177d; /* Color del ícono */
+}
+
+.search-bar-container {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #101010;
+  padding: 20px 0; /* Menos padding lateral para aprovechar el ancho */
+  text-align: center;
+}
+
+
+#busquedaCanciones {
+  width: 50vw; /* Casi todo el ancho de la ventana */
+  padding: 14px 25px;
+  border-radius: 30px;
+  border: none;
+  background-color: #2a2a2a;
+  color: white;
+  font-size: 16px;
+  margin: 0 auto;
+  display: block;
+}
+
+.oculto {
+  display: none !important;
+}
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 186px;
+    background-color: #0c0c0c;
+    padding: 20px;
+  }
+  .sidebar .logo img {
+    width: auto; /* Ajusta el ancho automáticamente */
+    max-width: 100%; /* Evita que el logo exceda el contenedor */
+    height: auto; /* Mantén la proporción del logo */
+    
+  }
+  .sidebar .navigation ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .sidebar .navigation ul li {
+    padding: 10px 0px;
+  }
+  .sidebar .navigation ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .sidebar .navigation ul li a:hover,
+  .sidebar .navigation ul li a:active,
+  .sidebar .navigation ul li a:focus {
+    color: #ffffff;
+  }
+  .sidebar .navigation ul li a:hover .fa,
+  .sidebar .navigation ul li a:active .fa,
+  .sidebar .navigation ul li a:focus .fa {
+    color: #b3b3b3;
+  }
+  .sidebar .navigation ul li .fa {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .sidebar .navigation ul li a:hover .fa:hover,
+  .sidebar .navigation ul li a:hover .fa:active,
+  .sidebar .navigation ul li a:hover .fa:focus {
+    color: #ffffff;
+  }
+  .sidebar .policies {
+    position: absolute;
+    bottom: 100px;
+  }
+  .sidebar .policies ul {
+    list-style: none;
+  }
+  .sidebar .policies ul li {
+    padding-bottom: 5px;
+  }
+  .sidebar .policies ul li a {
+    color: #b3b3b3;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .sidebar .policies ul li a:hover,
+  .sidebar .policies ul li a:active,
+  .sidebar .policies ul li a:focus {
+    text-decoration: underline;
+  }
+  
+  .main-container {
+    margin-left: 245px;
+    margin-bottom: 100px;
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #101010;
+    padding: 14px 30px;
+  }
+  .topbar .prev-next-buttons button {
+    color: #7a7a7a;
+    cursor: not-allowed;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    font-size: 18px;
+    border: 0px;
+    background-color: #090909;
+    margin-right: 10px;
+  }
+  .topbar .navbar {
+    display: flex;
+    align-items: center;
+  }
+  .topbar .navbar ul {
+    list-style: none;
+  }
+  .topbar .navbar ul li {
+    display: inline-block;
+    margin: 0px 8px;
+    width: 70px;
+  }
+  .topbar .navbar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .topbar .navbar ul li a:hover,
+  .topbar .navbar ul li a:active,
+  .topbar .navbar ul li a:focus {
+    color: #ffffff;
+    font-size: 15px;
+  }
+  .topbar .navbar ul li.divider {
+    color: #ffffff;
+    font-size: 26px;
+    margin: 0px 20px;
+    width: auto;
+  }
+  .topbar .navbar button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .topbar .navbar button:hover,
+  .topbar .navbar button:active,
+  .topbar .navbar button:focus {
+    background-color: #f2f2f2;
+  }
+  .spotify-playlists {
+    padding: 20px 40px;
+  }
+  .spotify-playlists h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .spotify-playlists .list {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+  }
+  .spotify-playlists .list .item {
+    position: relative;
+    width: 200px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  .spotify-playlists .list .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer; /* Cambia el puntero a una manita al pasar sobre la imagen */
+  }
+  .spotify-playlists .list .item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  }
+
+  .spotify-playlists .list .item:hover .play {
+    opacity: 1; /* Mostrar el botón al pasar el cursor */
+  }
+
+  .spotify-playlists .list .item h4 {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .spotify-playlists .list .item p {
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .spotify-playlists hr {
+    margin: 70px 0px 0px;
+    border-color: #636363;
+  }
+  
+  .preview {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .preview h6 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .preview p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .preview button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  .play,
+.play::before,
+.play span,
+.play span::before {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+#customPlayer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  color: white;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 100px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  gap: 20px;
+}
+
+#customPlayer .song-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+}
+
+#customPlayer .song-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+#customPlayer .player-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#customPlayer .progress {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+#customPlayer .progress input[type="range"] {
+  flex: 1;
+  cursor: pointer;
+  accent-color: #8d1ed7;
+}
+
+#customPlayer .buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#customPlayer .buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#customPlayer .buttons button:hover {
+  color: #8d1ed7;
+}
+
+#customPlayer .volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+#customPlayer .volume-control input[type="range"] {
+  width: 80px;
+  cursor: pointer;
+  accent-color: #8408aa;
+}
+
+.preview {
+  position: fixed;
+  bottom: 0;
+  left: 196px;
+  right: 0;
+  height: 90px;
+  background-color: #1e1e1e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.preview .song-info {
+  display: flex;
+  align-items: center;
+}
+
+.preview .song-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+
+.preview .controls button {
+  font-size: 18px;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.preview .progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 300px;
+}
+
+.preview input[type="range"] {
+  width: 100%;
+  accent-color: #1db954;
+}
+
+/* Estilo para el contenedor principal de perfiles */
+.artist-profiles {
+  text-align: center;
+  margin: 20px;
+}
+
+.profiles {
+  display: flex;
+  flex-wrap: wrap;        /* Permite que bajen de línea si no caben */
+  justify-content: center;
+  gap: 20px;              /* Espacio entre recuadros */
+  padding: 10px;
+}
+.profile {
+  width: 250px;           /* Asegura tamaño uniforme */
+  background-color: #181717;
+  border: 5px solid #53177d;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile:hover {
+  transform: translateY(-5px); /* Efecto de elevación */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.profile h4 {
+  font-size: 18px;
+  color: #ffffff; /* Color del texto */
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.profile p {
+  font-size: 14px;
+  color: #fffcfc; /* Color del texto */
+  line-height: 1.5;
+}
+
+.artist-profiles h2 {
+  font-size: 28px; /* Tamaño del texto */
+  color: #53177d; /* Color del texto */
+  font-weight: bold; /* Negrita */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  text-align: center; /* Centrado */
+  margin-bottom: 20px; /* Espaciado inferior */
+  border-bottom: 2px solid #ffffff; /* Línea decorativa debajo */
+  display: inline-block; /* Para ajustar la línea al texto */
+  padding-bottom: 5px; /* Espaciado entre el texto y la línea */
+}
+
+.profile-text.hidden, .profile-video.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.profile-text.visible {
+  max-height: 500px;
+  opacity: 1;
+  padding: 10px;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.profile-video.visible {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+/* Ajusta el cuadro del enlace para que sea más compacto */
+.youtube-button {
+  display: inline-block;
+  background-color: #ffffff; /* Fondo blanco para el cuadro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 5px; /* Reduce el espaciado interno */
+  text-align: center; /* Centra el contenido */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más pequeña */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+/* Efecto al pasar el mouse sobre el cuadro */
+.youtube-button:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Estilo para el logo de YouTube */
+.youtube-logo {
+  width: 2px; /* Reduce el tamaño del logo */
+  height: auto; /* Mantén la proporción */
+  display: block; /* Asegura que el logo sea un bloque */
+  margin: 0 auto; /* Centra el logo dentro del cuadro */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el logo */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Oculta el enlace completamente */
+.youtube-button.hidden {
+  display: none; /* Elimina el cuadro del flujo del documento */
+  opacity: 0; /* Asegura que no sea visible */
+  overflow: hidden; /* Oculta contenido excedente */
+  transition: opacity 0.5s ease; /* Animación suave */
+}
+
+/* Muestra el enlace con animación */
+.youtube-button.visible {
+  display: inline-block; /* Vuelve a mostrar el cuadro */
+  opacity: 1; /* Hace el botón visible */
+  width: 175px; /* Ajusta el ancho según sea necesario */
+}
+
+.hidden {
+  display: none !important;
+}
+
+.volume-control input[type="range"] {
+  appearance: none;
+  width: 2000px; /* Aumentamos el tamaño de la barra */
+  height: 10px; /* Hacemos la barra más gruesa */
+  background: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilo del botón de volumen */
+.volume-control button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Estilo para el "thumb" (círculo de la barra) */
+input[type="range"]::-webkit-slider-thumb {
+  background: #fff;
+  width: 30px; /* Aumentamos el tamaño del "thumb" */
+  height: 30px; /* Aumentamos el tamaño del "thumb" */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #fff;
+  width: 30px; /* Aumentamos el tamaño del "thumb" */
+  height: 30px; /* Aumentamos el tamaño del "thumb" */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.modal iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+}
+
+.modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.profile-video.hidden {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.profile-video.visible {
+  max-height: 500px; /* Ajusta según el tamaño del video */
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}

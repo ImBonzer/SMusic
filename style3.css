@@ -1,0 +1,72 @@
+body {
+    background-color: #121212; /* Fondo oscuro igual al de index.html */
+    color: #ffffff; /* Texto blanco para mejor contraste */
+    font-family: 'Montserrat', sans-serif; /* Asegúrate de usar la misma fuente */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* Fondo más oscuro para el contenedor */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .login-container input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+  
+  .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff; /* Verde de Spotify */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .login-container button:hover {
+    background-color: #8d1ed7; /* Verde más claro al pasar el cursor */
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .register-link a {
+    color: #8d1ed7;
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .logo img {
+    width: 150px; /* Aumenta el tamaño del logo */
+    height: auto; /* Mantén la proporción del logo */
+  }
